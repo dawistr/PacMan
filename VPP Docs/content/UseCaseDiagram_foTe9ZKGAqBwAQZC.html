@@ -1,0 +1,404 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Use Case Diagram - Use Case Diagram1</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initGridDiagram();">
+	<div id="vplink" style="position:absolute; z-index:21; visibility:hidden">
+		<table bordercolor="#A9BFD3" cellpadding="0" border="1" cellspacing="0">
+			<tr>
+				<td>
+					<table width="100%" cellpadding="0" border="0" cellspacing="0">
+						<tr style="background:#DDDDDD">
+							<td style="font-size: 12px;" align="left">
+								<select id="vplink-linkType" onchange="vpLinkToggleName()">
+	<option value="Project Link">Project Link</option>
+	<option value="Page URL">Page URL</option>
+</select>
+							</td>
+							<td style="font-size: 12px;" align="right">
+								<input id="vplink-checkbox" onclick="javascript: vpLinkToggleName()" type="checkbox" />
+								<label for="vplink-checkbox">with Name</label>							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea id="vplink-text" style="width: 348px; height: 60px; border-color: #7EADD9; outline: none;"></textarea>				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="spotlight_top" style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;">
+	</div>
+	<div id="spotlight_bottom" style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;">
+	</div>
+	<div id="spotlight_left" style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;">
+	</div>
+	<div id="spotlight_right" style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;">
+	</div>
+	<canvas id="spotlight_c" height="100" style="position:absolute; z-index:2; visibility:hidden" width="100">
+	</canvas>
+	<div id="spotLightResourcesTop" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="spotLightResourcesRight" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="linkPopupMenuLayer" style="position:absolute;z-index:4;visibility:hidden">
+		<table id="linkPopupMenuTable" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" width="100%" border="0">
+		</table>
+	</div>
+	<div id="referenceIconLayer" style="position:absolute; z-index:1; visibility:hidden; ">
+		<table style="font-size:1;" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="subdiagramIconLayer" style="position:absolute; z-index:1; visibility:hidden; ">
+		<table style="font-size:1;" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="transitorIconLayer" style="position:absolute; z-index:1; visibility:hidden; ">
+		<table style="font-size:1;" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="documentationIconLayer" style="position:absolute; z-index:1; visibility:hidden; ">
+		<table style="font-size:1;" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Documentation.png" style="border:none" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		Projekt Documentation	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<div id="vplink" style="position:absolute; z-index:21; visibility:hidden">
+		<table bordercolor="#A9BFD3" cellpadding="0" border="1" cellspacing="0">
+			<tr>
+				<td>
+					<table width="100%" cellpadding="0" border="0" cellspacing="0">
+						<tr style="background:#DDDDDD">
+							<td style="font-size: 12px;" align="left">
+								<select id="vplink-linkType" onchange="vpLinkToggleName()">
+	<option value="Project Link">Project Link</option>
+	<option value="Page URL">Page URL</option>
+</select>
+							</td>
+							<td style="font-size: 12px;" align="right">
+								<input id="vplink-checkbox" onclick="javascript: vpLinkToggleName()" type="checkbox" />
+								<label for="vplink-checkbox">with Name</label>							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea id="vplink-text" style="width: 348px; height: 60px; border-color: #7EADD9; outline: none;"></textarea>				</td>
+			</tr>
+		</table>
+	</div>
+	<p class="PageTitle">
+		<span id="PageTitleText">
+			Use Case Diagram - Use Case Diagram1		</span>
+		<a style="padding-left: 16px; font-size: 12px" onclick="javascript: showVpLink('Projekt.vpp://diagram/foTe9ZKGAqBwAQZC', 'Use Case Diagram1\nProjekt.vpp://diagram/foTe9ZKGAqBwAQZC', 'Use Case Diagram1', this); return false;" href="#">
+			<img src="../images/icons/link.png" border="0"> link</a>
+	</p>
+	<div style="position: relative; padding-bottom: 20px;">
+		<table style="position: absolute; top: 0; left: 0; z-index: 20;" width="100%" cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+<span class="TableContent">Jump to:</span>					<select id="SelectShape" class="TableContent" onChange="scrollWin(this.value);hideLinkPopup();showSpotLight(this.value)">
+<option value="">Please select a model element</option>
+<option value="shape|137.0|237.0|30.0|60.0|Actor_EoLe9ZKGAqBwAQZR.html|Actor_EoLe9ZKGAqBwAQZR.html|fILe9ZKGAqBwAQZQ" id="optionfILe9ZKGAqBwAQZQ">gracz : Actor</option>
+<option value="shape|78.0|5.0|80.0|40.0|UseCase_Sdi_9ZKGAqBwAQa0.html|UseCase_Sdi_9ZKGAqBwAQa0.html|Sdi.9ZKGAqBwAQaz" id="optionSdi.9ZKGAqBwAQaz">tworzy profil : Use Case</option>
+<option value="shape|216.0|12.0|80.0|40.0|UseCase_2rf_9ZKGAqBwAQdE.html|UseCase_2rf_9ZKGAqBwAQdE.html|2rf.9ZKGAqBwAQdD" id="option2rf.9ZKGAqBwAQdD">wybiera profil : Use Case</option>
+<option value="shape|337.0|12.0|80.0|40.0|UseCase_b60B9ZKGAqBwAQeH.html|UseCase_b60B9ZKGAqBwAQeH.html|N60B9ZKGAqBwAQeG" id="optionN60B9ZKGAqBwAQeG">gra : Use Case</option>
+<option value="shape|448.0|107.0|121.0|52.0|UseCase_uYo13NKGAqBwAQte.html|UseCase_uYo13NKGAqBwAQte.html|8oo13NKGAqBwAQtd" id="option8oo13NKGAqBwAQtd">wybiera poziom trudnosci : Use Case</option>
+<option value="shape|433.0|191.0|223.0|86.0|UseCase_zw813NKGAqBwAQuA.html|UseCase_zw813NKGAqBwAQuA.html|zw813NKGAqBwAQt_" id="optionzw813NKGAqBwAQt_">przegląda statystyki : Use Case</option>
+<option value="shape|2.0|63.0|98.0|44.0|UseCase_Fs913NKGAqBwAQvQ.html|UseCase_Fs913NKGAqBwAQvQ.html|Fs913NKGAqBwAQvP" id="optionFs913NKGAqBwAQvP">kasuje profil : Use Case</option>
+<option value="shape|632.0|5.0|159.0|53.0|UseCase_GnCN3NKGAqBwAQwA.html|UseCase_GnCN3NKGAqBwAQwA.html|GnCN3NKGAqBwAQv_" id="optionGnCN3NKGAqBwAQv_">zapisuje wynik gracza : Use Case</option>
+<option value="shape|739.0|218.0|147.0|44.0|UseCase_xIAt3NKGAqBwAQwl.html|UseCase_xIAt3NKGAqBwAQwl.html|xIAt3NKGAqBwAQwk" id="optionxIAt3NKGAqBwAQwk">sortowanie statystyk : Use Case</option>
+<option value="shape|308.0|297.0|153.0|67.0|UseCase_2iG73NKGAqBwAQ8X.html|UseCase_2iG73NKGAqBwAQ8X.html|2iG73NKGAqBwAQ8W" id="option2iG73NKGAqBwAQ8W">wyjście z gry w czasie grania : Use Case</option>
+</select>				</td>
+			</tr>
+		</table>
+		<table style="position: relative; top: 24;" width="100%" cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img id="diagram" src="../images/Use_Case_Diagram1.png" usemap="#diagram_map" class="Image" width="890" height="368"/>
+					<map name="diagram_map">
+<area coords="379.0, 122.0, 371.0, 126.0, 363.0, 126.0, 363.0, 130.0, 155.0, 234.0, 156.15384, 237.0, 167.0, 237.0, 167.0, 243.5, 374.0, 140.0, 448.0, 140.0, 448.0, 126.0, 380.53845, 126.0, 379.0, 122.0" coords2="379.0, 122.0, 371.0, 126.0, 363.0, 126.0, 363.0, 130.0, 155.0, 234.0, 156.15384, 237.0, 167.0, 237.0, 167.0, 243.5, 374.0, 140.0, 448.0, 140.0, 448.0, 126.0, 380.53845, 126.0, 379.0, 122.0" shape="poly" alt=":Association" id="areadiagram_map_Ma013NKGAqBwAQt3" href="Association_8K013NKGAqBwAQty.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="157.0, 230.0, 157.0, 237.0, 167.0, 237.0, 167.0, 244.0, 433.0, 244.0, 433.0, 230.0" coords2="157.0, 230.0, 157.0, 237.0, 167.0, 237.0, 167.0, 244.0, 433.0, 244.0, 433.0, 230.0" shape="poly" alt=":Association" id="areadiagram_map_HGC13NKGAqBwAQuV" href="Association_kGC13NKGAqBwAQuQ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="100.0, 86.58064, 100.0, 107.0, 92.408806, 107.0, 143.10063, 237.0, 158.2875, 237.0, 100.0, 86.58064" coords2="100.0, 86.58064, 100.0, 107.0, 92.408806, 107.0, 143.10063, 237.0, 158.2875, 237.0, 100.0, 86.58064" shape="poly" alt=":Association" id="areadiagram_map_G2j13NKGAqBwAQvl" href="Association_WWj13NKGAqBwAQvg.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="656.0, 229.0, 656.0, 243.0, 739.0, 243.0, 739.0, 229.0" coords2="656.0, 229.0, 656.0, 243.0, 739.0, 243.0, 739.0, 229.0" shape="poly" alt=":Extend" id="areadiagram_map_Fgot3NKGAqBwAQxC" href="Extend_Ggot3NKGAqBwAQxA.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="417.0, 24.0, 417.0, 38.0, 632.0, 38.0, 632.0, 24.0" coords2="417.0, 24.0, 417.0, 38.0, 632.0, 38.0, 632.0, 24.0" shape="poly" alt=":Include" id="areadiagram_map_9c.t3NKGAqBwAQyU" href="Include_Ac_t3NKGAqBwAQyS.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="166.0, 305.0, 166.0, 319.0, 308.0, 319.0, 308.0, 305.0" coords2="166.0, 305.0, 166.0, 319.0, 308.0, 319.0, 308.0, 305.0" shape="poly" alt=":Association" id="areadiagram_map_vX273NKGAqBwAQ8w" href="Association_tX273NKGAqBwAQ8r.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="158.0, 26.0, 158.0, 45.0, 145.0, 45.0, 145.0, 237.0, 159.0, 237.0, 159.0, 26.0" coords2="158.0, 26.0, 158.0, 45.0, 145.0, 45.0, 145.0, 237.0, 159.0, 237.0, 159.0, 26.0" shape="poly" alt=":Association" id="areadiagram_map_Yca.9ZKGAqBwAQbQ" href="Association_Usa_9ZKGAqBwAQbJ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="214.0, 29.0, 158.85582, 237.0, 167.0, 237.0, 167.0, 246.14285, 167.0, 246.14285, 171.0, 247.0, 222.93925, 52.0, 216.0, 52.0, 216.0, 29.571428, 214.0, 29.0" coords2="214.0, 29.0, 158.85582, 237.0, 167.0, 237.0, 167.0, 246.14285, 167.0, 246.14285, 171.0, 247.0, 222.93925, 52.0, 216.0, 52.0, 216.0, 29.571428, 214.0, 29.0" shape="poly" alt=":Association" id="areadiagram_map_HFwB9ZKGAqBwAQda" href="Association_JFwB9ZKGAqBwAQdV.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="337.0, 40.673683, 155.92233, 237.0, 167.0, 237.0, 167.0, 245.83157, 345.7767, 52.0, 337.0, 52.0, 337.0, 40.673683" coords2="337.0, 40.673683, 155.92233, 237.0, 167.0, 237.0, 167.0, 245.83157, 345.7767, 52.0, 337.0, 52.0, 337.0, 40.673683" shape="poly" alt=":Association" id="areadiagram_map_ur8B9ZKGAqBwAQex" href="Association_kr8B9ZKGAqBwAQes.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="308, 297, 461, 364" coords2="308, 297, 461, 364" shape="rect" alt="wyjście z gry w czasie grania:Use Case" id="areadiagram_map_2iG73NKGAqBwAQ8W" href="UseCase_2iG73NKGAqBwAQ8X.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="739, 218, 886, 262" coords2="739, 218, 886, 262" shape="rect" alt="sortowanie statystyk:Use Case" id="areadiagram_map_xIAt3NKGAqBwAQwk" href="UseCase_xIAt3NKGAqBwAQwl.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="632, 5, 791, 58" coords2="632, 5, 791, 58" shape="rect" alt="zapisuje wynik gracza:Use Case" id="areadiagram_map_GnCN3NKGAqBwAQv_" href="UseCase_GnCN3NKGAqBwAQwA.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="2, 63, 100, 107" coords2="2, 63, 100, 107" shape="rect" alt="kasuje profil:Use Case" id="areadiagram_map_Fs913NKGAqBwAQvP" href="UseCase_Fs913NKGAqBwAQvQ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="433, 191, 656, 277" coords2="433, 191, 656, 277" shape="rect" alt="przegląda statystyki:Use Case" id="areadiagram_map_zw813NKGAqBwAQt_" href="UseCase_zw813NKGAqBwAQuA.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="448, 107, 569, 159" coords2="448, 107, 569, 159" shape="rect" alt="wybiera poziom trudnosci:Use Case" id="areadiagram_map_8oo13NKGAqBwAQtd" href="UseCase_uYo13NKGAqBwAQte.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="337, 12, 417, 52" coords2="337, 12, 417, 52" shape="rect" alt="gra:Use Case" id="areadiagram_map_N60B9ZKGAqBwAQeG" href="UseCase_b60B9ZKGAqBwAQeH.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="216, 12, 296, 52" coords2="216, 12, 296, 52" shape="rect" alt="wybiera profil:Use Case" id="areadiagram_map_2rf.9ZKGAqBwAQdD" href="UseCase_2rf_9ZKGAqBwAQdE.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="78, 5, 158, 45" coords2="78, 5, 158, 45" shape="rect" alt="tworzy profil:Use Case" id="areadiagram_map_Sdi.9ZKGAqBwAQaz" href="UseCase_Sdi_9ZKGAqBwAQa0.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area coords="137, 237, 167, 297" coords2="137, 237, 167, 297" shape="rect" alt="gracz:Actor" id="areadiagram_map_fILe9ZKGAqBwAQZQ" href="Actor_EoLe9ZKGAqBwAQZR.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+</map>
+				</td>
+			</tr>
+		</table>
+		<p>
+		</p>
+	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Documentation</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Actor.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Actor.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a class="ItemLink" href="Actor_EoLe9ZKGAqBwAQZR.html">gracz : Actor</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a class="ItemLink" href="UseCase_Sdi_9ZKGAqBwAQa0.html">tworzy profil : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a class="ItemLink" href="UseCase_2rf_9ZKGAqBwAQdE.html">wybiera profil : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a class="ItemLink" href="UseCase_b60B9ZKGAqBwAQeH.html">gra : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a class="ItemLink" href="UseCase_uYo13NKGAqBwAQte.html">wybiera poziom trudnosci : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a class="ItemLink" href="UseCase_zw813NKGAqBwAQuA.html">przegląda statystyki : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a class="ItemLink" href="UseCase_Fs913NKGAqBwAQvQ.html">kasuje profil : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a class="ItemLink" href="UseCase_GnCN3NKGAqBwAQwA.html">zapisuje wynik gracza : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a class="ItemLink" href="UseCase_xIAt3NKGAqBwAQwl.html">sortowanie statystyk : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a class="ItemLink" href="UseCase_2iG73NKGAqBwAQ8X.html">wyjście z gry w czasie grania : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		Projekt Documentation	</div>
+</body>
+</html>
