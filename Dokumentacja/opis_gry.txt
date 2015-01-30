@@ -1,0 +1,11 @@
+﻿PacMan - to gra, w której bohaterem jest tytułowy PacMan.
+Zjada on kropki, ucieka przed złymi duchami, a kiedy zje dużą kropkę to może zjeść również duchy, które się odradzają.
+Nasza wersja będzie umożliwiała:
+- tworzenie profilu przez użytkownika
+- kasowanie profilu
+- wybranie poziomu trudności - po przejściu jednego poziomu jest odblokowywany kolejny poziom
+- umożliwia granie
+- umożliwia wyjście gry podczas jej trwania
+- umożliwia wybór profilu gracza
+- przeglądanie statystyk
+- uruchomienie nowej gry
