@@ -1,5 +1,0 @@
-
-WAŻNE POJĘCIA
-
-PROFIL - nazwa użytkownika, która pozwala na prowadzenie gier
-GRACZ - użytkownik, który jest reprezentowany przez uprzednio utworzony profil
